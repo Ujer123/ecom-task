@@ -1,4 +1,3 @@
-// components/ProductCard.js
 import { motion } from 'framer-motion';
 import { useCart } from '../contexts/CartContext';
 import Image from 'next/image';

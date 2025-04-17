@@ -1,66 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# E-Commerce Store Readme
 
-## Getting Started
+## 🚀 Setup Instructions
+- Node.js v16+
+- npm v8+
+- Git
+git clone - https://github.com/Ujer123/ecom-task.git
+cd ecom-task
+npm install @heroicons/react@^2.2.0 @mui/icons-material@^7.0.2 @mui/material@^7.0.2 @react-firebase/auth@^0.2.10 firebase@^11.6.0 framer-motion@^12.7.3 next@15.3.0 react@^19.0.0 react-beautiful-dnd@^13.1.1 react-dom@^19.0.0 react-firebase-hooks@^5.1.1 react-use-gesture@^9.1.3 @eslint/eslintrc@^3 @tailwindcss/postcss@^4 eslint@^9 eslint-config-next@15.3.0 tailwindcss@^4
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🚀 Features Implemented
+You can view the detail by clicking on the quick look
+You can increase and decrease the product after clicking on add to cart
+User can login and logout and their add to cart detail will be in their detail if logout then only it will clean and if login again then again the data will be display
+you can refresh the page and then also add to cart detail will not be reset
 
 
-
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyClC4H2L-8BRI-k6PYRDiVAEByT8PgKW6o",
-  authDomain: "ecom-task-860cd.firebaseapp.com",
-  projectId: "ecom-task-860cd",
-  storageBucket: "ecom-task-860cd.firebasestorage.app",
-  messagingSenderId: "1083230013784",
-  appId: "1:1083230013784:web:a800844ace96c251317d2d",
-  measurementId: "G-6TV4DTZCCP"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+## 🚀 Technical decision
+-components/       # Reusable UI components
+-contexts/       # Global state management
+-pages/       # Application routes
+-public/       # Static assets
+-styles/       # Global CSS styles
 
 
-npm install -g firebase-tools
-firebase login
-firebase init
-firebase deploy
+## 🚀 Challenges and how i solved it
+-Cart State Persistence
+Challenge: Cart items lost on refresh
+Solution:
+-Implemented localStorage synchronization
+-User-specific cart keys (cart_<user-id>)
+-Fallback to anonymous cart for guests
+
+-Dark Mode Flicker
+Challenge: Flash of light mode on initial load
+Solution:
+-Server-side class injection
+-localStorage theme check in initial state
+-CSS Variables for theme switching

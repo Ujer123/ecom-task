@@ -1,4 +1,3 @@
-// components/Layout.js
 import Link from 'next/link';
 import { useAuth} from '../contexts/AuthContext';
 import { useCart } from '@/contexts/CartContext';

@@ -1,10 +1,8 @@
-// components/QuickLook.js
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect } from 'react';
 import Image from 'next/image';
 
 export default function QuickLook({ product, onClose }) {
-  // close on Escape
   useEffect(() => {
     const handleKeyDown = e => e.key === 'Escape' && onClose();
     window.addEventListener('keydown', handleKeyDown);
@@ -20,7 +18,6 @@ export default function QuickLook({ product, onClose }) {
         exit={{ opacity: 0 }}
         className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 backdrop-blur-sm"
         onClick={e => {
-          // only close if the click target *is* the backdrop
           if (e.target === e.currentTarget) onClose();
         }}
       >
@@ -30,7 +27,7 @@ export default function QuickLook({ product, onClose }) {
           animate={{ scale: 1 }}
           exit={{ scale: 0.95 }}
           className="bg-white dark:bg-gray-800 rounded-xl p-6 max-w-3xl w-full mx-4 relative"
-          onClick={e => e.stopPropagation()}   // prevent backdrop-click when clicking inside
+          onClick={e => e.stopPropagation()} 
         >
           <button
             onClick={onClose}
@@ -72,7 +69,6 @@ export default function QuickLook({ product, onClose }) {
               </div>
             </div>
 
-            {/* Product Details */}
             <div className="overflow-y-auto max-h-[70vh]">
               <h2 className="text-2xl font-bold mb-4">{product.title}</h2>
               <p className="text-gray-600 dark:text-gray-300 mb-4">

@@ -1,4 +1,3 @@
-// pages/login.js
 import { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { ExclamationTriangleIcon, ArrowPathIcon } from '@heroicons/react/24/outline';

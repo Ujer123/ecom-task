@@ -1,4 +1,3 @@
-// components/SkeletonProductCard.js
 import { motion } from 'framer-motion';
 import ProductCard from './ProductCard';
 
@@ -19,7 +18,6 @@ export function SkeletonProductCard() {
   );
 }
 
-// Usage in ProductList.js
 export default function ProductList() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
